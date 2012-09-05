@@ -1,0 +1,3 @@
+Version 0.99.1, Tue Sep  4 19:56:58
+    - Fixed Boolean serialization bug <https://github.com/nohuhu/Ext.ux.Cache/issues/1>
+      reported by Psychokrameur

@@ -1,9 +1,10 @@
 /*
  * General purpose caching facility for Ext JS applications. Sophisticated and fast,
  * it ensures that values are stored and retrieved correctly, preserving perfect
- * round-trip compatibility.
+ * round-trip compatibility. Uses webStorage in newer browsers, with automatic
+ * fallback to in-memory storage in older browsers.
  *
- * Version 0.99, compatible with Ext JS 4.0 and 4.1
+ * Version 0.99.1, compatible with Ext JS 4.0 and 4.1
  *
  * Copyright (c) 2011-2012 Alexander Tokarev.
  *  
@@ -13,6 +14,7 @@
  * or toolkit without explicit permission.
  * 
  * License details: http://www.gnu.org/licenses/lgpl.html
+ * Github repo: https://github.com/nohuhu/Ext.ux.Cache
  */
 
 Ext.ns('Ext.ux');
@@ -321,7 +323,7 @@ Ext.define('Ext.ux.Cache', {
      * @private Serializes a boolean value
      */
     _serialize_boolean: function(value) {
-        return { 'type': 'boolean', 'value': value ? 'true' : false };
+        return { 'type': 'boolean', 'value': value ? 'true' : 'false' };
     },
     
     /**
